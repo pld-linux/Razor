@@ -3,7 +3,7 @@ Summary:	Collection of files for checking, reporting, and revoking spam.
 Summary(pl):	Zbiór plików do sprawdzania, raportowania i odrzucania spamu.
 Name:		Razor
 Version:	2.12
-Release:	1
+Release:	2
 License:	Artistic
 Group:		Applications/Mail
 Source0:	http://unc.dl.sourceforge.net/sourceforge/razor/razor-agents-%{version}.tar.gz
@@ -65,5 +65,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man[15]/*
 
 %files -n perl-Razor
+%defattr(644,root,root,755)
 %{perl_sitelib}/Razor2
 %{_mandir}/man3/*
