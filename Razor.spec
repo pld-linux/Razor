@@ -24,9 +24,9 @@ BuildRequires:	perl-URI
 %endif
 BuildRequires:	rpm-perlprov >= 4.1-13
 Requires:	perl-Razor = %{version}
-Obsoletes:	perl-Vipuls-Razor-V1
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+Obsoletes:	perl-Vipuls-Razor-V1
 
 %description
 Vipul's Razor is a distributed, collaborative, spam detection, reporting,
@@ -64,7 +64,9 @@ Modu³y Perla dla Razora, klasa Razor2::.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 for f in check register report revoke; do
 	ln -sf razor-client $RPM_BUILD_ROOT%{_bindir}/razor-$f
