@@ -1,6 +1,6 @@
 %include	/usr/lib/rpm/macros.perl
-Summary:	Collection of files for checking, reporting, and revoking spam.
-Summary(pl):	Zbiór plików do sprawdzania, raportowania i odrzucania spamu.
+Summary:	Collection of files for checking, reporting, and revoking spam
+Summary(pl):	Zbiór plików do sprawdzania, raportowania i odrzucania spamu
 Name:		Razor
 Version:	2.12
 Release:	3
