@@ -9,7 +9,7 @@ Group:		Applications/Mail
 Source0:	http://unc.dl.sourceforge.net/sourceforge/razor/razor-agents-%{version}.tar.gz
 Patch0:		razor-agents-makefile.patch
 URL:		http://razor.sourceforge.net/
-BuildRequires:	perl >= 5
+BuildRequires:	perl-devel >= 5
 BuildRequires:	rpm-perlprov >= 3.0.3-16
 Requires:	perl-Razor = %{version}
 Obsoletes:	perl-Vipuls-Razor-V1
