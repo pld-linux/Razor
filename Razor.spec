@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_without	autodeps	# don't BR packages needed only for resolving deps
+%bcond_without	tests		# don't perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
 Summary:	Collection of files for checking, reporting, and revoking spam
 Summary(pl):	Zbiór plików do sprawdzania, raportowania i odrzucania spamu
 Name:		Razor
-Version:	2.36
-Release:	4
+Version:	2.40
+Release:	1
 License:	Artistic
 Group:		Applications/Mail
-Source0:	http://dl.sourceforge.net/sourceforge/razor/razor-agents-%{version}.tar.gz
-# Source0-md5:	5deaae3ea2300bf480b6904f8a69a7f1
-Patch0:	%{name}2.patch-quinlan
+Source0:	http://dl.sourceforge.net/razor/razor-agents-%{version}.tar.gz
+# Source0-md5:	ca1a340e13464661aa0efebd869fcebc
 URL:		http://razor.sourceforge.net/
 BuildRequires:	perl-devel >= 5.8.0
 %if %{with autodeps}
@@ -24,7 +24,7 @@ BuildRequires:	perl-Time-HiRes
 BuildRequires:	perl-URI
 %endif
 BuildRequires:	rpm-perlprov >= 4.1-13
-Requires:	perl-Razor = %{version}
+Requires:	perl-Razor = %{version}-%{release}
 BuildArch:	noarch
 Obsoletes:	perl-Vipuls-Razor-V1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -54,9 +54,6 @@ Modu³y Perla dla Razora, klasa Razor2::.
 
 %prep
 %setup -q -n razor-agents-%{version}
-cd lib/Razor2
-%patch0 -p0
-cd -
 
 %build
 %{__perl} Makefile.PL \
@@ -64,14 +61,15 @@ cd -
 
 %{__make}
 
-#%%{__make} test
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	PERL5LIB=$RPM_BUILD_ROOT/usr/lib/perl5/vendor_perl/5.8.0/i686-pld-linux-thread-multi
+	PERL5LIB=$RPM_BUILD_ROOT%{perl_vendorarch} \
+	INSTALLMAN5DIR=%{_mandir}/man5
 
 for f in check register report revoke; do
 	ln -sf razor-client $RPM_BUILD_ROOT%{_bindir}/razor-$f
@@ -89,5 +87,11 @@ rm -rf $RPM_BUILD_ROOT
 %files -n perl-Razor
 %defattr(644,root,root,755)
 %{perl_vendorarch}/Razor2
-%{perl_vendorarch}/auto/Razor2
+%dir %{perl_vendorarch}/auto/Razor2
+%dir %{perl_vendorarch}/auto/Razor2/Preproc
+%dir %{perl_vendorarch}/auto/Razor2/Preproc/deHTMLxs
+%attr(755,root,root) %{perl_vendorarch}/auto/Razor2/Preproc/deHTMLxs/deHTMLxs.so
+%{perl_vendorarch}/auto/Razor2/Preproc/deHTMLxs/deHTMLxs.bs
+%{perl_vendorarch}/auto/Razor2/Preproc/deHTMLxs/autosplit.ix
+%{perl_vendorarch}/auto/Razor2/Syslog
 %{_mandir}/man3/*
