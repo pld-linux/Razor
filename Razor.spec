@@ -30,13 +30,13 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Vipul's Razor is a distributed, collaborative, spam detection, reporting,
-and filtering network.  The primary focus of the system is to identify
-and remove all email spam from the internet.  Visit the website at
+and filtering network. The primary focus of the system is to identify
+and remove all email spam from the internet. Visit the website at
 <http://razor.sourceforge.net/>.
 
 %description -l pl
 Vipul's Razor jest dystrybuowaln±, tworzon± dziêki wspó³pracy sieci±,
-s³u¿±c± do wykrywania spamu, raportowania i filtrowania.  Podstawowym
+s³u¿±c± do wykrywania spamu, raportowania i filtrowania. Podstawowym
 zadaniem systemu jest identyfikacja spamu z poczty internetowej.
 Odwied¼ stronê domow±: <http://razor.sourceforge.net/>.
 
@@ -56,7 +56,7 @@ Modu³y Perla dla Razora, klasa Razor2::.
 
 %build
 %{__perl} Makefile.PL \
-        INSTALLDIRS=vendor
+	INSTALLDIRS=vendor
 %{__make} \
 	OPTIMIZE="%{rpmcflags}"
 
