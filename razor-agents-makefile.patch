@@ -1,0 +1,20 @@
+--- Makefile.PL	Fri Jun 28 01:09:37 2002
++++ Makefile.PL.new	Sun Jul 21 11:48:10 2002
+@@ -51,7 +51,7 @@
+     $inherited =~ s/^(HTMLEXT =)/$man5pods$1/gm;
+ 
+     my $man5 = "INST_MAN5DIR = blib/man5\n" . 
+-               'INSTALLMAN5DIR = $(PREFIX)/man/man5' . "\n" . 
++               'INSTALLMAN5DIR = $(DESTDIR)$(PREFIX)/share/man/man5' . "\n" . 
+                "MAN5EXT = 5\n";
+ 
+     $inherited =~ s/^(PERM_RW = )/$man5$1/gm;
+@@ -124,7 +124,7 @@
+  
+   $inherited =~ s/(\$\(INSTALLMAN1DIR\))/$1$man5/gm;
+   $inherited =~ s/install :: all pure_install doc_install/install :: all pure_install doc_install install_razor_agents/;
+-  $inherited .= "\ninstall_razor_agents::\n\t " . '$(INSTALLBIN)/razor-client'; 
++  $inherited .= "\ninstall_razor_agents::\n\t ";# '$(INSTALLBIN)/razor-client'; 
+   $inherited;
+ 
+ }
