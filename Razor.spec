@@ -3,7 +3,7 @@ Summary:	Collection of files for checking, reporting, and revoking spam.
 Summary(pl):	Zbiór plików do sprawdzania, raportowania i odrzucania spamu.
 Name:		Razor
 Version:	2.12
-Release:	2
+Release:	3
 License:	Artistic
 Group:		Applications/Mail
 Source0:	http://unc.dl.sourceforge.net/sourceforge/razor/razor-agents-%{version}.tar.gz
@@ -11,9 +11,10 @@ Patch0:		razor-agents-makefile.patch
 URL:		http://razor.sourceforge.net/
 BuildRequires:	perl >= 5
 BuildRequires:	rpm-perlprov >= 3.0.3-16
+Requires:	perl-Razor = %{version}
+Obsoletes:	perl-Vipuls-Razor-V1
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-Requires:	perl-Razor = %{version}
 
 %description
 Vipul's Razor is a distributed, collaborative, spam detection, reporting,
