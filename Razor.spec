@@ -16,6 +16,7 @@ Patch0:		razor-agents-makefile.patch
 URL:		http://razor.sourceforge.net/
 BuildRequires:	perl-devel >= 5.8.0
 %if 0%{!?_without_autodeps:1}
+BuildRequires:	perl-Net-DNS
 BuildRequires:	perl-Class-Fields
 BuildRequires:	perl-Digest-Nilsimsa
 BuildRequires:	perl-Digest-SHA1
