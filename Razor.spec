@@ -14,15 +14,15 @@ Group:		Applications/Mail
 Source0:	http://dl.sourceforge.net/razor/razor-agents-%{version}.tar.gz
 # Source0-md5:	ca1a340e13464661aa0efebd869fcebc
 URL:		http://razor.sourceforge.net/
-BuildRequires:	perl-devel >= 5.8.0
 %if %{with autodeps}
 BuildRequires:	perl-Net-DNS
 BuildRequires:	perl-Class-Fields
 BuildRequires:	perl-Digest-Nilsimsa
 BuildRequires:	perl-Digest-SHA1
-BuildRequires:	perl-Time-HiRes
 BuildRequires:	perl-URI
 %endif
+BuildRequires:	perl-Time-HiRes
+BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 Requires:	perl-Razor = %{version}-%{release}
 BuildArch:	noarch
