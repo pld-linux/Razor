@@ -6,7 +6,7 @@ Version:	2.12
 Release:	1
 License:	Artistic
 Group:		Applications/Mail
-Source0:	http://unc.dl.sourceforge.net/sourceforge/razor/razor-agents-2.12.tar.gz
+Source0:	http://unc.dl.sourceforge.net/sourceforge/razor/razor-agents-%{version}.tar.gz
 Patch0:		razor-agents-makefile.patch
 URL:		http://razor.sourceforge.net/
 BuildRequires:	perl >= 5
