@@ -11,6 +11,7 @@ Release:	4
 License:	Artistic
 Group:		Applications/Mail
 Source0:	http://dl.sourceforge.net/sourceforge/razor/razor-agents-%{version}.tar.gz
+# Source0-md5:	1528a40a7ce0929971f2b745b5e88ee9
 Patch0:		razor-agents-makefile.patch
 URL:		http://razor.sourceforge.net/
 BuildRequires:	perl-devel >= 5.8.0
