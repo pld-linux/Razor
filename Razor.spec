@@ -83,7 +83,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Change* BUGS README INSTALL CREDITS
-%{_bindir}/*
+%attr(755,root,root) %{_bindir}/*
 %{_mandir}/man[15]/*
 
 %files -n perl-Razor
