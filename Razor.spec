@@ -6,13 +6,13 @@
 Summary:	Collection of files for checking, reporting, and revoking spam
 Summary(pl):	Zbiór plików do sprawdzania, raportowania i odrzucania spamu
 Name:		Razor
-Version:	2.12
+Version:	2.36
 Release:	4
 License:	Artistic
 Group:		Applications/Mail
 Source0:	http://dl.sourceforge.net/sourceforge/razor/razor-agents-%{version}.tar.gz
-# Source0-md5:	1528a40a7ce0929971f2b745b5e88ee9
-Patch0:		razor-agents-makefile.patch
+# Source0-md5:	5deaae3ea2300bf480b6904f8a69a7f1
+Patch0:	%{name}2.patch-quinlan
 URL:		http://razor.sourceforge.net/
 BuildRequires:	perl-devel >= 5.8.0
 %if 0%{!?_without_autodeps:1}
@@ -54,11 +54,14 @@ Modu³y Perla dla Razora, klasa Razor2::.
 
 %prep
 %setup -q -n razor-agents-%{version}
-%patch -p0
+cd lib/Razor2
+%patch0 -p0
+cd -
 
 %build
 %{__perl} Makefile.PL \
-	INSTALLDIRS=vendor
+        INSTALLDIRS=vendor
+
 %{__make}
 
 #%%{__make} test
@@ -67,7 +70,8 @@ Modu³y Perla dla Razora, klasa Razor2::.
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+	DESTDIR=$RPM_BUILD_ROOT \
+	PERL5LIB=$RPM_BUILD_ROOT/usr/lib/perl5/vendor_perl/5.8.0/i686-pld-linux-thread-multi
 
 for f in check register report revoke; do
 	ln -sf razor-client $RPM_BUILD_ROOT%{_bindir}/razor-$f
@@ -84,5 +88,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n perl-Razor
 %defattr(644,root,root,755)
-%{perl_vendorlib}/Razor2
+%{perl_vendorarch}/Razor2
+%{perl_vendorarch}/auto/Razor2
 %{_mandir}/man3/*
