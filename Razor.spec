@@ -8,7 +8,7 @@ Summary:	Collection of files for checking, reporting, and revoking spam
 Summary(pl):	Zbiór plików do sprawdzania, raportowania i odrzucania spamu
 Name:		Razor
 Version:	2.40
-Release:	1
+Release:	2
 License:	Artistic
 Group:		Applications/Mail
 Source0:	http://dl.sourceforge.net/razor/razor-agents-%{version}.tar.gz
@@ -25,7 +25,6 @@ BuildRequires:	perl-Time-HiRes
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 Requires:	perl-Razor = %{version}-%{release}
-BuildArch:	noarch
 Obsoletes:	perl-Vipuls-Razor-V1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -58,8 +57,8 @@ Modu³y Perla dla Razora, klasa Razor2::.
 %build
 %{__perl} Makefile.PL \
         INSTALLDIRS=vendor
-
-%{__make}
+%{__make} \
+	OPTIMIZE="%{rpmcflags}"
 
 %{?with_tests:%{__make} test}
 
