@@ -1,6 +1,6 @@
 #
 # Conditional build:
-# _without_autodeps	- don't BR packages needed only for resolving deps
+%bcond_without	autodeps	# don't BR packages needed only for resolving deps
 #
 %include	/usr/lib/rpm/macros.perl
 Summary:	Collection of files for checking, reporting, and revoking spam
@@ -15,7 +15,7 @@ Source0:	http://dl.sourceforge.net/sourceforge/razor/razor-agents-%{version}.tar
 Patch0:	%{name}2.patch-quinlan
 URL:		http://razor.sourceforge.net/
 BuildRequires:	perl-devel >= 5.8.0
-%if 0%{!?_without_autodeps:1}
+%if %{with autodeps}
 BuildRequires:	perl-Net-DNS
 BuildRequires:	perl-Class-Fields
 BuildRequires:	perl-Digest-Nilsimsa
@@ -26,8 +26,8 @@ BuildRequires:	perl-URI
 BuildRequires:	rpm-perlprov >= 4.1-13
 Requires:	perl-Razor = %{version}
 BuildArch:	noarch
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	perl-Vipuls-Razor-V1
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Vipul's Razor is a distributed, collaborative, spam detection, reporting,
