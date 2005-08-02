@@ -7,12 +7,12 @@
 Summary:	Collection of files for checking, reporting, and revoking spam
 Summary(pl):	Zbiór plików do sprawdzania, raportowania i odrzucania spamu
 Name:		Razor
-Version:	2.67
+Version:	2.72
 Release:	1
 License:	Artistic
 Group:		Applications/Mail
 Source0:	http://dl.sourceforge.net/razor/razor-agents-%{version}.tar.gz
-# Source0-md5:	0118b6030ea261ea85e73a55cc7eac8e
+# Source0-md5:	cf118fd9d7e5357a2f9b9c8d90fb7096
 URL:		http://razor.sourceforge.net/
 %if %{with autodeps}
 BuildRequires:	perl-Net-DNS
