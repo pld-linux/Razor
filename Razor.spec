@@ -7,12 +7,12 @@
 Summary:	Collection of files for checking, reporting, and revoking spam
 Summary(pl):	Zbiór plików do sprawdzania, raportowania i odrzucania spamu
 Name:		Razor
-Version:	2.77
+Version:	2.81
 Release:	1
 License:	Artistic
 Group:		Applications/Mail
 Source0:	http://dl.sourceforge.net/razor/razor-agents-%{version}.tar.bz2
-# Source0-md5:	76e64cc00e6adc0e55bca61bffa1ecc6
+# Source0-md5:	1a21d84f3a8291f73e7f1d3dd36d9d7f
 URL:		http://razor.sourceforge.net/
 %if %{with autodeps}
 BuildRequires:	perl-Net-DNS
@@ -70,7 +70,7 @@ rm -rf $RPM_BUILD_ROOT
 	PERL5LIB=$RPM_BUILD_ROOT%{perl_vendorarch} \
 	INSTALLMAN5DIR=%{_mandir}/man5
 
-for f in check register report revoke; do
+for f in admin check report revoke; do
 	ln -sf razor-client $RPM_BUILD_ROOT%{_bindir}/razor-$f
 done
 
