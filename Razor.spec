@@ -70,10 +70,6 @@ rm -rf $RPM_BUILD_ROOT
 	PERL5LIB=$RPM_BUILD_ROOT%{perl_vendorarch} \
 	INSTALLMAN5DIR=%{_mandir}/man5
 
-for f in admin check report revoke; do
-	ln -sf razor-client $RPM_BUILD_ROOT%{_bindir}/razor-$f
-done
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
