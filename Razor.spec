@@ -65,6 +65,8 @@ Modu³y Perla dla Razora, klasa Razor2::.
 %install
 rm -rf $RPM_BUILD_ROOT
 
+install -d $RPM_BUILD_ROOT%{_sysconfdir}/razor
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	PERL5LIB=$RPM_BUILD_ROOT%{perl_vendorarch} \
@@ -81,6 +83,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n perl-Razor
 %defattr(644,root,root,755)
+%dir %{_sysconfdir}/razor
 %{perl_vendorarch}/Razor2
 %dir %{perl_vendorarch}/auto/Razor2
 %dir %{perl_vendorarch}/auto/Razor2/Preproc
