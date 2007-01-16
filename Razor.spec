@@ -15,10 +15,10 @@ Source0:	http://dl.sourceforge.net/razor/razor-agents-%{version}.tar.bz2
 # Source0-md5:	a79a798e52426261c6a2c4089b33872f
 URL:		http://razor.sourceforge.net/
 %if %{with autodeps}
-BuildRequires:	perl-Net-DNS
 BuildRequires:	perl-Class-Fields
 BuildRequires:	perl-Digest-Nilsimsa
 BuildRequires:	perl-Digest-SHA1
+BuildRequires:	perl-Net-DNS
 BuildRequires:	perl-URI
 %endif
 BuildRequires:	perl-Time-HiRes
@@ -29,10 +29,10 @@ Obsoletes:	perl-Vipuls-Razor-V1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Vipul's Razor is a distributed, collaborative, spam detection, reporting,
-and filtering network. The primary focus of the system is to identify
-and remove all email spam from the internet. Visit the website at
-<http://razor.sourceforge.net/>.
+Vipul's Razor is a distributed, collaborative, spam detection,
+reporting, and filtering network. The primary focus of the system is
+to identify and remove all email spam from the internet. Visit the
+website at <http://razor.sourceforge.net/>.
 
 %description -l pl
 Vipul's Razor jest dystrybuowaln±, tworzon± dziêki wspó³pracy sieci±,
@@ -64,13 +64,14 @@ Modu³y Perla dla Razora, klasa Razor2::.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 install -d $RPM_BUILD_ROOT%{_sysconfdir}/razor
 
-%{__make} install \
+%{__make} pure_install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	PERL5LIB=$RPM_BUILD_ROOT%{perl_vendorarch} \
 	INSTALLMAN5DIR=%{_mandir}/man5
+
+rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/auto/razor-agents/.packlist
 
 %clean
 rm -rf $RPM_BUILD_ROOT
