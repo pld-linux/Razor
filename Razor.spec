@@ -8,7 +8,7 @@ Summary:	Collection of files for checking, reporting, and revoking spam
 Summary(pl):	Zbiór plików do sprawdzania, raportowania i odrzucania spamu
 Name:		Razor
 Version:	2.82
-Release:	1
+Release:	2
 License:	Artistic
 Group:		Applications/Mail
 Source0:	http://dl.sourceforge.net/razor/razor-agents-%{version}.tar.bz2
@@ -67,9 +67,7 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_sysconfdir}/razor
 
 %{__make} pure_install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	PERL5LIB=$RPM_BUILD_ROOT%{perl_vendorarch} \
-	INSTALLMAN5DIR=%{_mandir}/man5
+	DESTDIR=$RPM_BUILD_ROOT
 
 rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/auto/razor-agents/.packlist
 
@@ -80,7 +78,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc Change* BUGS README INSTALL CREDITS
 %attr(755,root,root) %{_bindir}/*
-%{_mandir}/man[15]/*
+%{_mandir}/man1/*
+%{_mandir}/man5/*
 
 %files -n perl-Razor
 %defattr(644,root,root,755)
