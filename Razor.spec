@@ -5,7 +5,7 @@
 #
 %include	/usr/lib/rpm/macros.perl
 Summary:	Collection of files for checking, reporting, and revoking spam
-Summary(pl):	Zbiór plików do sprawdzania, raportowania i odrzucania spamu
+Summary(pl.UTF-8):   ZbiÃ³r plikÃ³w do sprawdzania, raportowania i odrzucania spamu
 Name:		Razor
 Version:	2.82
 Release:	2
@@ -34,22 +34,22 @@ reporting, and filtering network. The primary focus of the system is
 to identify and remove all email spam from the internet. Visit the
 website at <http://razor.sourceforge.net/>.
 
-%description -l pl
-Vipul's Razor jest dystrybuowaln±, tworzon± dziêki wspó³pracy sieci±,
-s³u¿±c± do wykrywania spamu, raportowania i filtrowania. Podstawowym
+%description -l pl.UTF-8
+Vipul's Razor jest dystrybuowalnÄ…, tworzonÄ… dziÄ™ki wspÃ³Å‚pracy sieciÄ…,
+sÅ‚uÅ¼Ä…cÄ… do wykrywania spamu, raportowania i filtrowania. Podstawowym
 zadaniem systemu jest identyfikacja spamu z poczty internetowej.
-Odwied¼ stronê domow±: <http://razor.sourceforge.net/>.
+OdwiedÅº stronÄ™ domowÄ…: <http://razor.sourceforge.net/>.
 
 %package -n perl-Razor
 Summary:	Perl modules for Razor
-Summary(pl):	Modu³y Perla dla Razora
+Summary(pl.UTF-8):   ModuÅ‚y Perla dla Razora
 Group:		Development/Languages/Perl
 
 %description -n perl-Razor
 Perl modules for Razor, class Razor2::.
 
-%description -n perl-Razor -l pl
-Modu³y Perla dla Razora, klasa Razor2::.
+%description -n perl-Razor -l pl.UTF-8
+ModuÅ‚y Perla dla Razora, klasa Razor2::.
 
 %prep
 %setup -q -n razor-agents-%{version}
