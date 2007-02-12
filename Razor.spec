@@ -5,7 +5,7 @@
 #
 %include	/usr/lib/rpm/macros.perl
 Summary:	Collection of files for checking, reporting, and revoking spam
-Summary(pl.UTF-8):   Zbiór plików do sprawdzania, raportowania i odrzucania spamu
+Summary(pl.UTF-8):	Zbiór plików do sprawdzania, raportowania i odrzucania spamu
 Name:		Razor
 Version:	2.82
 Release:	2
@@ -42,7 +42,7 @@ Odwiedź stronę domową: <http://razor.sourceforge.net/>.
 
 %package -n perl-Razor
 Summary:	Perl modules for Razor
-Summary(pl.UTF-8):   Moduły Perla dla Razora
+Summary(pl.UTF-8):	Moduły Perla dla Razora
 Group:		Development/Languages/Perl
 
 %description -n perl-Razor
