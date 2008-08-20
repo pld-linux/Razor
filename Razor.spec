@@ -7,12 +7,12 @@
 Summary:	Collection of files for checking, reporting, and revoking spam
 Summary(pl.UTF-8):	Zbiór plików do sprawdzania, raportowania i odrzucania spamu
 Name:		Razor
-Version:	2.84
-Release:	2
+Version:	2.85
+Release:	1
 License:	Artistic
 Group:		Applications/Mail
 Source0:	http://dl.sourceforge.net/razor/razor-agents-%{version}.tar.bz2
-# Source0-md5:	8b9a11a6ce020383c32c45d1530d77c2
+# Source0-md5:	014d08db40187cb1316482191566b012
 URL:		http://razor.sourceforge.net/
 %if %{with autodeps}
 BuildRequires:	perl-Class-Fields
@@ -31,14 +31,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Vipul's Razor is a distributed, collaborative, spam detection,
 reporting, and filtering network. The primary focus of the system is
-to identify and remove all email spam from the internet. Visit the
-website at <http://razor.sourceforge.net/>.
+to identify and remove all email spam from the internet.
 
 %description -l pl.UTF-8
 Vipul's Razor jest dystrybuowalną, tworzoną dzięki współpracy siecią,
 służącą do wykrywania spamu, raportowania i filtrowania. Podstawowym
 zadaniem systemu jest identyfikacja spamu z poczty internetowej.
-Odwiedź stronę domową: <http://razor.sourceforge.net/>.
 
 %package -n perl-Razor
 Summary:	Perl modules for Razor
