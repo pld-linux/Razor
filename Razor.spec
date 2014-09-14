@@ -87,7 +87,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{perl_vendorarch}/auto/Razor2/Preproc
 %dir %{perl_vendorarch}/auto/Razor2/Preproc/deHTMLxs
 %attr(755,root,root) %{perl_vendorarch}/auto/Razor2/Preproc/deHTMLxs/deHTMLxs.so
-%{perl_vendorarch}/auto/Razor2/Preproc/deHTMLxs/deHTMLxs.bs
 %{perl_vendorarch}/auto/Razor2/Preproc/deHTMLxs/autosplit.ix
 %{perl_vendorarch}/auto/Razor2/Syslog
 %{_mandir}/man3/*
