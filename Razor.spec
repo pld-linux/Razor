@@ -8,12 +8,13 @@ Summary:	Collection of files for checking, reporting, and revoking spam
 Summary(pl.UTF-8):	Zbiór plików do sprawdzania, raportowania i odrzucania spamu
 Name:		Razor
 Version:	2.85
-Release:	10
+Release:	11
 License:	Artistic
 Group:		Applications/Mail
 Source0:	http://dl.sourceforge.net/razor/razor-agents-%{version}.tar.bz2
 # Source0-md5:	014d08db40187cb1316482191566b012
 URL:		http://razor.sourceforge.net/
+Patch0:		man-build.patch
 %if %{with autodeps}
 BuildRequires:	perl-Class-Fields
 BuildRequires:	perl-Digest-Nilsimsa
@@ -51,6 +52,7 @@ Moduły Perla dla Razora, klasa Razor2::.
 
 %prep
 %setup -q -n razor-agents-%{version}
+%patch0 -p1
 
 %build
 %{__perl} Makefile.PL \
