@@ -3,7 +3,6 @@
 %bcond_without	autodeps	# don't BR packages needed only for resolving deps
 %bcond_without	tests		# don't perform "make test"
 #
-%include	/usr/lib/rpm/macros.perl
 Summary:	Collection of files for checking, reporting, and revoking spam
 Summary(pl.UTF-8):	Zbiór plików do sprawdzania, raportowania i odrzucania spamu
 Name:		Razor
