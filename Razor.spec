@@ -7,7 +7,7 @@ Summary:	Collection of files for checking, reporting, and revoking spam
 Summary(pl.UTF-8):	Zbiór plików do sprawdzania, raportowania i odrzucania spamu
 Name:		Razor
 Version:	2.85
-Release:	22
+Release:	23
 License:	Artistic
 Group:		Applications/Mail
 Source0:	http://dl.sourceforge.net/razor/razor-agents-%{version}.tar.bz2
