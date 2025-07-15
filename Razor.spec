@@ -51,7 +51,7 @@ Moduły Perla dla Razora, klasa Razor2::.
 
 %prep
 %setup -q -n razor-agents-%{version}
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 %{__perl} Makefile.PL \
